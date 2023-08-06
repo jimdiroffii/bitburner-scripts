@@ -64,3 +64,40 @@ One thing that I would like to cover now, is a startup process. If bitburner bre
 - [x] Create a startup script that loads our scripts.
 
 `startup.js` checks if the server lists exist, and creates and populates them if they don't. Then it starts up `conn.js`, and spawns `copyHacks.js`. Spawn will kill `startup.js`, wait a few seconds, then execute `copyHacks.js`. `copyHacks.js` will take care of running the hacks on the remote servers.
+
+#### Day 2 Summary
+
+- [x] Get a job at Joe's Guns
+- [x] Buy a Hacknet Node
+- [x] Create a startup script that loads our scripts.
+
+### Day 3
+
+Our hack scripts are finally making their first returns after about 45 minutes. We have root access on all the base level servers except for `iron-gym`, which will unlock at level 100. We won't have access to backdoor functionality until later in the game, so we need to connect to each server, analyze and backdoor them.
+
+```javascript
+connect n00dles
+analyze
+backdoor
+home
+```
+
+Repeat for each server. Our faction invites came in too, and we can find those servers now, and manually hack them to start gaining access to the faction storyline. To do that, we will need `BruthSSH.exe`, which I will start creating now, finally finishing our shift at JoesGuns. It is possible to buy it from the DarkWeb, but we will reserve that for a bit later, and automate that process. Once `BruthSSH.exe` is finished, I access the CSEC server, backdoor it, join the faction, and begin working on hacking contracts.
+
+Now I feel like is a decision point about how to proceed. Let's take a look at our current situation.
+
+- [x] We have a list of servers to hack
+- [x] We have a script that will connect to a server and root it.
+- [x] We have a script that will hack a server.
+- [x] We have a startup script that loads our scripts.
+- [x] We have a Hacknet Node
+- [x] We had a job at Joe's Guns
+- [x] We have a faction invite to CSEC
+- [x] We have `BruthSSH.exe`
+- [x] We are working on hacking contracts
+
+We need to expand our network and hacking power. We can buy more servers, upgrade the home server, optimize our existing scripts, or replicate our current process to deeper servers. We also need to pick up the Tor node and buy more programs to unlock more servers.
+
+### Day 4
+
+I decided to take a break instead, and relaunched the game after 12 hours or so. We now have about $6.2M and level 182 hack level. This gives access to more programs, and servers to hack. I purchased a Tor node, and upgrade the home server RAM to 16GB. With the darknet node, I purchased FTPCrack.exe, ServerProfiler.exe, and DeepscanV1.exe. This allows us to hack servers that require 2 ports to be open. Let's update the `conn.js` script to use the new programs. Then kill and restart the script on the home server. `iron-gym` should now show up in our active scripts list.
