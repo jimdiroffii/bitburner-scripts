@@ -101,3 +101,19 @@ We need to expand our network and hacking power. We can buy more servers, upgrad
 ### Day 4
 
 I decided to take a break instead, and relaunched the game after 12 hours or so. We now have about $6.2M and level 182 hack level. This gives access to more programs, and servers to hack. I purchased a Tor node, and upgrade the home server RAM to 16GB. With the darknet node, I purchased FTPCrack.exe, ServerProfiler.exe, and DeepscanV1.exe. This allows us to hack servers that require 2 ports to be open. Let's update the `conn.js` script to use the new programs. Then kill and restart the script on the home server. `iron-gym` should now show up in our active scripts list.
+
+With `iron-gym` hacked, I logged in and backdoored the server.
+
+Upon analyzing our status, we are definitely not very efficient. Our server scripts that are hacking each server as slowly working the weaken and grow commands, and not hacking. The only server that has produced income is n00dles. It may have been more efficient to choose a server, and let every other server throw resources at hacking it. However, after checking each of our servers using the ServerProfiler.exe, all of the execution times have dropped well below 2 minutes. I'm going to let this configuration ride for a bit longer, expecting that once these scripts start hacking, we will quickly gain tens of millions of dollars.
+
+Instead, while these scripts run, let's do something else. We have these hacking contracts available, and our joesguns server has one. `contract-694985.cct`. Running this contract shows us a Caesar Cipher to solve. We are practicing programming, so lets write a script that will solve this challenge for us.
+
+- [x] Create a script that will solve the Caesar Cipher challenge.
+
+`caesar.js` will solve the Caesar Cipher challenge.
+
+Our next contract is on `harakiri-sushi`, `contract-33480-CyberSec`. This is `Algorithmic Stock Trader I`, which gives an array of values that represent stock prices. You are instructed to perform a single trade, buy and sell, to maximize profit. The algorithm required is a little more complicated. If we just try to find the lowest stock value on any given day, there is no guarentee that the later dates will offer a larger return than trading during some previous day. This looks like a multiple pointers problem, where we keep track of several states at once.
+
+- [x] Create a script that will solve the Algorithmic Stock Trader I challenge.
+
+`stock.js` will solve the Algorithmic Stock Trader I challenge.
