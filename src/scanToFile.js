@@ -7,6 +7,6 @@
 export async function main(ns) {
 	const servers = ns.scan();
 	const serverData = JSON.stringify(servers);
-	ns.write("servers.js", serverData, "w");
-	ns.tprint("Server data written to servers.js");
+	ns.write("servers.txt", serverData, "w");
+	ns.tprint("Server data written to servers.txt");
 }
