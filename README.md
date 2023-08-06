@@ -24,3 +24,7 @@ The ultimate goal is to be able to completely automate the workflow the game.
 ### Day 1
 
 Starting a new game and connecting the web socket copies over the `template.js` file. We have $1.113k and a 8GB home server. First order of business is to make some money. The goal here is automation. I'd like to start by generating a server list that we can use repeatedly.
+
+- [x] Create a script that will generate a list of servers to hack.
+
+`scanToFile.js` scans the local network for servers, and stores the hostnames to a JSON-formatted file called `servers.js`. Files created in-game are not copied back to our local machine. We don't need them to develop our scripts, but they might be useful for reference and debugging. Download a file from the game with the `download` command, and I've been storing them in the `download` folder for quick access. I don't want these dymamically created files to end up in the dist, so ensure they do not get copied to `src`.
