@@ -117,3 +117,42 @@ Our next contract is on `harakiri-sushi`, `contract-33480-CyberSec`. This is `Al
 - [x] Create a script that will solve the Algorithmic Stock Trader I challenge.
 
 `stock.js` will solve the Algorithmic Stock Trader I challenge.
+
+All necessary reputation has been gained for CSEC, so I switched to a software job at that CIA. We also have some more funds, so the home server was upgraded to 32GB.
+
+I should also look at expanding with new home servers. Let's create a script that returns all the prices of available servers to purchase.
+
+- [x] Create a script that will return all the prices of available servers to purchase.
+
+`serverPrices.js` will return all the prices of available servers to purchase and write them to a file called `serverPrices.txt`.
+
+```text
+serverPrices.txt
+
+2GB: $110000
+4GB: $220000
+8GB: $440000
+16GB: $880000
+32GB: $1760000
+64GB: $3520000
+128GB: $7040000
+256GB: $14080000
+512GB: $28160000
+1024GB: $56320000
+2048GB: $112640000
+4096GB: $225280000
+8192GB: $450560000
+16384GB: $901120000
+32768GB: $1802240000
+65536GB: $3604480000
+131072GB: $7208960000
+262144GB: $14417920000
+524288GB: $28835840000
+1048576GB: $57671680000
+```
+
+The biggest server we can afford right now is the 64GB version. I want to accelerate making some money, so I'm going to just start hacking the base servers from this new server. We can cycle through the servers one at a time, to help avoid over hacking any particular server. The basic scripts will still be running on the servers themselves to ensure grow and weaken keep running. We need a script that will purchase the new server, copy the scripts to it, and execute them.
+
+- [x] Create a script that will purchase a new server, copy the scripts to it, and execute them.
+
+`newServer.js` will purchase a new server, copy the scripts to it, and execute them. `hackAllServers.js` will loop through all servers and hack them directly. I hardcoded in a single server purchase to test and see how this works. It is immediately apparent that we are about to take all the money as we shot up $10M in just a few minutes. The new `hackAllServers.js` script runs with 36 threads on a 64GB server. This won't be sustainable without executing grow, and finding more servers to hack. I'm thinking that we can chain some spawn() commands to perform our basic hack loop, but spawn instances of hack, grow and weaken, that loop over all servers, and then respawn the basic hack process to determine which command to execute next.
