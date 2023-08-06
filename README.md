@@ -33,4 +33,19 @@ Now we have our list of servers, we can use it to connect and root them.
 
 - [x] Create a script that will connect to a server and root it.
 
-`conn.js` will connect to a server and root it. The root process can only be done if we meet the hacking level, which will continuously increase. As our hacking level increases, we want to ensure we gain access to newly available servers. Running `conn.js` continually will ensure we are always connected to the highest level server we can access. We will have to later modify our scans to append to the `servers.js` file to ensure we access new servers. We also want to skip servers that we have already rooted, or too high of a hacking level.
+`conn.js` will connect to a server and root it. The root process can only be done if we meet the hacking level, which will continuously increase. As our hacking level increases, we want to ensure we gain access to newly available servers. Running `conn.js` continually will ensure we are always connected to the highest level server we can access. We will have to later modify our scans to append to the `servers.txt` file to ensure we access new servers. We also want to skip servers that we have already rooted, or too high of a hacking level.
+
+We have access to our first servers and now its time to hack them.
+
+- [x] Create a script that will hack a server.
+
+`basicHack.js` will execute a self-contained hack that includes grow(), weaken() and hack() in the same file. To automate this, we will require a script that looks for rooted servers, copies the hack file to them, and executes it. For that we will need another file that is running on our home server, `copyHacks.js`. I've begun to copy the code for excluded servers, so we might as well make that a seperate file too, `excludedServers.txt`.
+
+With our 3 scripts running, `conn.js` and `copyHacks.js` at home, and `basicHack.js` on the remote servers, we can now automate the process of hacking servers. We can now start to make some money. `conn.js` and `copyHacks.js` keep running on the home server, and will hack, copy and execute on new servers as our hack level grows.
+
+#### Day 1 Summary
+
+- [x] Create a script that will generate a list of servers to hack.
+- [x] Create a script that will connect to a server and root it.
+- [x] Create a script that will hack a server.
+- [x] Leave scripts running on home server
