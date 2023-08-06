@@ -49,3 +49,18 @@ With our 3 scripts running, `conn.js` and `copyHacks.js` at home, and `basicHack
 - [x] Create a script that will connect to a server and root it.
 - [x] Create a script that will hack a server.
 - [x] Leave scripts running on home server
+
+### Day 2
+
+While we wait on our first scripts to start producing, we can play some other aspects of the game. Prior to further automation, let's get a basic job, and a single Hacknet node. The Hacknet node just earns some passive income while we start things up, and while we are not playing the game. Upgrading is expensive, but it may be worth getting the first level upgrades to speed up the passive income. Better that we just get a job (or perform crime) and start earning some money. I decided to start at Joe's Guns, and take some easy cash. I'll need the extra money to upgrade the home server and run more scripts as our two running scripts take up most of our current resources. With the job in hand, I upgraded the hacknet node to level 10, and earned our first $10k. We need $200k to buy a Tor router, and $1M to upgrade the home server to 16GB. This should happen fairly quickly as our scripts continue to run.
+
+- [x] Get a job at Joe's Guns
+- [x] Buy a Hacknet Node
+
+We've made it beyond hacking level 30 and have $100k in our account. The idea so far has been to automate the process of hacking new servers, and so far that goal has been successful. As we level up, new servers are showing up in our active scripts list. Each server just hacks itself. There is another way to approach the hacks, and that would be to use all available threads to hack a single server over and over again. That actually might be a faster way to earn quicker cash here in the early game. However, our current approach should start producing decent cash flow before too long, and we really want a better hacking algorithm anyways. So, before we get too ahead of ourselves, let's stick to this simple solution. There are many more aspects that need to be covered, like buying more servers, and gaining access to new programs.
+
+One thing that I would like to cover now, is a startup process. If bitburner breaks, or we break it with a script, we might need to kill all script to restart the game. To simplify this process, I'm going to create a simple startup file and loads our scripts for us.
+
+- [x] Create a startup script that loads our scripts.
+
+`startup.js` checks if the server lists exist, and creates and populates them if they don't. Then it starts up `conn.js`, and spawns `copyHacks.js`. Spawn will kill `startup.js`, wait a few seconds, then execute `copyHacks.js`. `copyHacks.js` will take care of running the hacks on the remote servers.
